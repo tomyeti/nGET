@@ -26,6 +26,8 @@ package core
 			gtFactory.registerType("Button", Button);
 
 			shout("removePreLauncher");
+			log("Launcher");
+
 
 			user.changeScreen(MainScreen, false);
 		}

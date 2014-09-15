@@ -25,7 +25,7 @@ package core
 			bmp.width = stage.stageWidth;
 			bmp.height = stage.stageHeight;
 			
-			
+			log("Prelauncher");
 		}
 		
 	

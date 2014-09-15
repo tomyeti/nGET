@@ -21,7 +21,7 @@ package gui.main
 		{
 			transform.attach("mid");
 			
-			log("main screen");
+			log("Main Screen");
 			
 			
 			
