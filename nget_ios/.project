@@ -29,6 +29,11 @@
 			<locationURI>SOURCE/GameTheater2014</locationURI>
 		</link>
 		<link>
+			<name>[source path] data</name>
+			<type>2</type>
+			<locationURI>DROPBOX/%5BYETi_INTERNAL%5DnGET/data</locationURI>
+		</link>
+		<link>
 			<name>[source path] src</name>
 			<type>2</type>
 			<locationURI>SOURCE/nGET/src</locationURI>

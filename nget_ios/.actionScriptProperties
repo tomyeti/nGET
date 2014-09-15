@@ -4,6 +4,7 @@
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="${SOURCE}/nGET/src"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="${SOURCE}/GameTheater2014"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${DROPBOX}/[YETi_INTERNAL]nGET/data"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">

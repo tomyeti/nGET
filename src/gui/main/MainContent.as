@@ -6,6 +6,7 @@ package gui.main
 	import gametheater.render.nodes.gtTextNode;
 	
 	import gui.Button;
+	import gui.SettingsWidget;
 	
 	public final dynamic class MainContent extends gtWidget implements IListener
 	{
@@ -13,12 +14,16 @@ package gui.main
 		auto var background:gtShapeNode;
 		auto var label:gtTextNode;
 		public var mainButton:Button;
+		public var settings:SettingsWidget;
+		public var settingsButton:Button;
 		
 		public function onCreate():void
 		{
 			transform.attach("mid");
 			
 			log("main screen");
+			
+			
 			
 			background = create(gtShapeNode);
 			
@@ -34,15 +39,33 @@ package gui.main
 			label.attach();
 			
 			
+			
 		 	mainButton = create(Button);
 			mainButton.setup(150, 75, 0xF9A651, 0x000000, "Play");
 			mainButton.transform.x = scene.width / 2 - 50;
-			mainButton.transform.y = scene.height * 2/3
+			mainButton.transform.y = scene.height * 2/3;
+			
+			settingsButton = create(Button);
+			settingsButton.setup(50, 50, 0x333333, 0xDDDDDD, "S", [MainButtonClicked, "toggleSettings"]);
+			settingsButton.transform.x = scene.width - 10 - settingsButton.transform.width;
+			settingsButton.transform.y = 10;
+			settingsButton.transform.attach();
+			
+			settings = create(SettingsWidget);			
+			settings.transform.attach();
+			settings.transform.visible = false;
+
+				
 		}
 		
 		public function onRefreshLayout():void
 		{
 			
+		}
+		
+		listener function toggleSettings():void
+		{
+			settings.transform.visible = !settings.transform.visible;
 		}
 		
 		

@@ -1,16 +1,10 @@
 package core
 {
-	import com.distriqt.extension.applicationrater.ApplicationRater;
-	
 	import gametheater.gt;
-	import gametheater.gtMobileApp;
 	import gametheater.gtObject;
 	import gametheater.core.gtApp;
-	import gametheater.plugins.apprater.gtAppRater;
 	import gametheater.plugins.console.gtConsolePlugin;
 	import gametheater.plugins.deviceid.gtDeviceID;
-	import gametheater.plugins.facebook.gtFacebookPlugin;
-	import gametheater.plugins.inappbilling.gtInAppBillingPlugin;
 	import gametheater.plugins.netstat.gtNetworkStatus;
 	
 	public final class Setup extends gtObject
@@ -22,7 +16,6 @@ package core
 			gtApp.loadPlugin(gtDeviceID);
 			
 			gt.create(FloxLogic);
-			
 			//gtApp.loadPlugin(gtFloxPlugin,"k2ybcKZLJ9VnUpeT", "3BgBtNdqV0z5Hn7W", FloxPlayer);
 			
 			if (platform.supports("ios"))

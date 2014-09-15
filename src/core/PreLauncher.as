@@ -1,5 +1,7 @@
 package core
 {
+	import flash.display.Bitmap;
+	
 	import gametheater.IListener;
 	import gametheater.gtObject;
 	import gametheater.render.nodes.gtShapeNode;
@@ -8,40 +10,41 @@ package core
 	public final class PreLauncher extends gtObject implements IListener
 	{
 		use namespace auto;
-		auto var background:gtShapeNode;
-		auto var label:gtTextNode;
+		
+		
+		
+		[Embed(source="/Default-Portrait.png")]
+		public static const SplashTexture:Class;
+		public var bmp:Bitmap = null;
 		public function onCreate():void
 		{
-			//scene.addLayer("PRELAUNCH_LAYER",90000);
-			background = create(gtShapeNode);
 			
-			background.drawRect(scene.width, scene.height, 0xDDDDDD);
-			background.attach();
+			scene.addLayer("PRELAUNCH_LAYER",90000);
 			
-			label.setup("nGET");
-			label.center();
-			label.size = 30;
-			label.color = 0xffffff;
-			label.x = scene.width / 2;
-			label.y = scene.height / 2;
-			label.attach();
+			bmp = scene.getLayer("PRELAUNCH_LAYER").content.addChild(new SplashTexture()) as Bitmap;
+			bmp.width = stage.stageWidth;
+			bmp.height = stage.stageHeight;
+			
+			
 		}
 		
-		listener function sceneResize():void
-		{
-			background.width = scene.width;
-			background.height = scene.height;
-			
-		}
+	
+		
+		
 		
 		listener function removePreLauncher():void
 		{
-			delayF(60,"release");
+			delayF(2,"onRelease");
 		}
 		
 		public function onRelease():void
 		{
-			if (background != null) background.release();
+			if (bmp)
+			{	
+				bmp.parent.removeChild(bmp);
+				bmp.bitmapData.dispose();
+			}
+			bmp = null;
 		}
 	}
 }
