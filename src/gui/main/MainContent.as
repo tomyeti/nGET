@@ -7,6 +7,7 @@ package gui.main
 	
 	import gui.Button;
 	import gui.SettingsWidget;
+	import gui.UserScripts;
 	
 	public final dynamic class MainContent extends gtWidget implements IListener
 	{
@@ -41,12 +42,12 @@ package gui.main
 			
 			
 		 	mainButton = create(Button);
-			mainButton.setup(150, 75, 0xF9A651, 0x000000, "Play");
+			mainButton.setup(150, 75, 0xF9A651, 0x000000, "Play", [UserScripts, "goToActionList"]);
 			mainButton.transform.x = scene.width / 2 - 50;
 			mainButton.transform.y = scene.height * 2/3;
 			
 			settingsButton = create(Button);
-			settingsButton.setup(50, 50, 0x333333, 0xDDDDDD, "S", [MainButtonClicked, "toggleSettings"]);
+			settingsButton.setup(50, 50, 0x333333, 0xDDDDDD, "S", [UserScripts, "toggleSettings"]);
 			settingsButton.transform.x = scene.width - 10 - settingsButton.transform.width;
 			settingsButton.transform.y = 10;
 			settingsButton.transform.attach();

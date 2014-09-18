@@ -4,6 +4,10 @@ package
 	
 	public class User extends gtUser
 	{
+		
+		public var selectedAction:String = "";
+		
+		
 		public function onCreate():void
 		{
 			makeGlobal("user", this);
