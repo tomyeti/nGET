@@ -9,7 +9,8 @@ package core
 		{
 			makeGlobal("vocab", this);
 		}
-		
+		//TODO
+		//Add vocab XML as per copy function
 		public static function copy(id:String):String
 		{
 			if (globals.vocabXML)
