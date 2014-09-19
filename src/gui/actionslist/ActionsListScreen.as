@@ -45,10 +45,10 @@ package gui.actionslist
 			actionsList.push(action3);
 			actionsList.push(action4);
 			
-			action1.setup("puzzle of the day", "easy");
-			action2.setup("puzzle of the day", "medium");
-			action3.setup("puzzle of the day", "hard");
-			action4.setup("gift", "easy");
+			action1.setup("puzzle of the day", "easy", "200 xp");
+			action2.setup("puzzle of the day", "medium", "500 xp" );
+			action3.setup("puzzle of the day", "hard", "800 xp");
+			action4.setup("gift", "easy", "15 xp");
 			for(var i:int = 0; i < actionsList.length; i++)
 			{
 				var action:ActionWidget = actionsList[i];
@@ -68,7 +68,7 @@ package gui.actionslist
 			for(var i:int = 0; i < actionsList.length; i++)
 			{
 				var action:ActionWidget = actionsList[i];
-				action.transform.y = 100 + action.transform.height * i;
+				action.transform.y = 300 + (action.transform.height + 10 )* i;
 				action.transform.attach();
 			}
 		}

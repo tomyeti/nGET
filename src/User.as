@@ -6,6 +6,7 @@ package
 	{
 		
 		public var selectedAction:String = "";
+		public var actionObj:Object;
 		
 		
 		public function onCreate():void
