@@ -3,8 +3,10 @@ package core
 	import gametheater.ISingleton;
 	import gametheater.gtObject;
 	import gametheater.gtScreen;
+	import gametheater.core.gtApp;
 	import gametheater.core.gtFactory;
 	import gametheater.core.gtLayer;
+	import gametheater.plugins.starling.gtStarlingPlugin;
 	
 	import gui.Button;
 	import gui.main.MainScreen;
@@ -13,8 +15,10 @@ package core
 	{
 		public function onCreate():void
 		{
+			gtApp.loadPlugin(gtStarlingPlugin);
 
 			create(gtLayer).setup("background", 0).enableInput();
+			starlingScene.addLayer("background", 0);
 			user.changeScreen(gtScreen, false);			
 
 			create(Blob);

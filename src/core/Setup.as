@@ -6,6 +6,7 @@ package core
 	import gametheater.plugins.console.gtConsolePlugin;
 	import gametheater.plugins.deviceid.gtDeviceID;
 	import gametheater.plugins.netstat.gtNetworkStatus;
+	import gametheater.plugins.starling.gtStarlingPlugin;
 	
 	public final class Setup extends gtObject
 	{

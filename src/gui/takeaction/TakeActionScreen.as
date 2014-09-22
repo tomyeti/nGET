@@ -15,6 +15,7 @@ package gui.takeaction
 		public function onCreate():void
 		{
 			transform.attach("background");
+			starlingTransform.attach("background");
 
 		}
 		

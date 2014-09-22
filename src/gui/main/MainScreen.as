@@ -8,7 +8,8 @@ package gui.main
 		public function onCreate():void
 		{
 			transform.attach("background");
-			
+			starlingTransform.attach("background");
+
 		}
 		
 		public function onChangeTo():void

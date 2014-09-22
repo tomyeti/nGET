@@ -33,6 +33,15 @@ package gui.deal
 		public function onCreate():void
 		{
 			transform.attach("background");
+			starlingTransform.attach("background");
+
+			
+			
+			
+		}
+		
+		public function onChangeTo():void
+		{
 			upperBacking.drawRect(scene.width, scene.height / 5, 0xCCCCCC).attach();
 			
 			xpText.setup(user.actionObj.xp).attach();
@@ -67,13 +76,6 @@ package gui.deal
 			exit.transform.attach();
 			
 			coin.drawCircle(25, 0xFFFFFF).attach();
-			
-			
-		}
-		
-		public function onChangeTo():void
-		{
-			
 		}
 		
 		public function onChangeFrom():void

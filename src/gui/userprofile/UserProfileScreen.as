@@ -27,6 +27,14 @@ package gui.userprofile
 		public function onCreate():void
 		{
 			transform.attach("background");
+			starlingTransform.attach("background");
+
+			
+			
+		}
+		
+		public function onChangeTo():void
+		{
 			backing.drawRoundedRect(scene.width - 20, scene.height / 5, 25, 0xBBBBBB).attach();
 			
 			
@@ -46,12 +54,6 @@ package gui.userprofile
 			exit = create(Button);
 			exit.setup(50, 50, 0x222222, 0xFFFFFF, "X", [UserScripts, "goToActionList"]);
 			exit.transform.attach();
-			
-		}
-		
-		public function onChangeTo():void
-		{
-			
 		}
 		
 		public function onChangeFrom():void

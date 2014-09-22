@@ -22,6 +22,7 @@ package gui
 		
 		
 		use namespace auto;
+		public var backing:gtStarlingQuadNode;
 		auto var back:gtShapeNode;
 		auto var buttonClick:gtClickAction;
 		auto var label:gtTextNode;
@@ -36,6 +37,14 @@ package gui
 		}
 		public function setup(w:Number, h:Number, color:uint, labelColor:uint, text:String, s:* = null):Button
 		{
+			
+			link("backing", create(gtStarlingQuadNode));
+			backing.attach();
+			backing.width = w;
+			backing.height = h;
+			backing.color = color;
+			back.visible = false;
+			
 			back.clear().drawRoundedRect(w, h, 25, color, 1);
 			
 			backStarling = create(gtStarlingShapeNode);

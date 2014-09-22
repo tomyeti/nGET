@@ -22,6 +22,8 @@ package gui.lives
 		public function onCreate():void
 		{
 			transform.attach("background");
+			starlingTransform.attach("background");
+
 		}
 		
 		public function onChangeTo():void
