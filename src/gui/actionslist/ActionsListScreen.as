@@ -131,7 +131,7 @@ package gui.actionslist
 		public function set scrollY(v:Number):void
 		{
 
-			var usableHeight = actionsList.length * actionsList[0].transform.height;
+			var usableHeight:Number = actionsList.length * actionsList[0].transform.height;
 			
 			if (scrollTransform.y < 200 - usableHeight)
 			{
@@ -145,6 +145,11 @@ package gui.actionslist
 			
 			
 		}
+		public function onScrollerEnd():void
+		{
+			if (scrollTransform.y < -10) scrollTransform.tweenTo(1, {y: 0});
+		}
+		
 		
 		listener function toggleSettings():void
 		{
