@@ -135,19 +135,26 @@ package gui.actionslist
 			
 			if (scrollTransform.y < 200 - usableHeight)
 			{
-				scrollTransform.y = 200 - usableHeight;
+				scrollTransform.y = _scrollY = 200 - usableHeight;
 			}
-			else 
+			else
 			{
 				scrollTransform.y = _scrollY = v;
 
 			}
+
+			
 			
 			
 		}
 		public function onScrollerEnd():void
 		{
-			if (scrollTransform.y < -10) scrollTransform.tweenTo(1, {y: 0});
+			/*if (scrollTransform.y < -10) 
+			{
+				scrollTransform.tweenTo(1, {y: 0});
+				
+				
+			}*/
 		}
 		
 		
