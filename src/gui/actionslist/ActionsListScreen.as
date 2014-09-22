@@ -17,6 +17,10 @@ package gui.actionslist
 		
 		public var actionsList:Array = [];
 		
+		public var lives:Button;
+		public var coins:Button;
+		public var level:Button;
+		
 		public function onCreate():void
 		{
 			transform.attach("background");
@@ -25,15 +29,18 @@ package gui.actionslist
 		public function onChangeTo():void
 		{
 			background.drawRect(scene.width,scene.height,0xeeeeee).attach();
-			link("settings", create(SettingsWidget));
-			settings.transform.attach();
-			settings.transform.visible = false;
 			
-			settingsButton.setup(50, 50, 0x333333, 0xDDDDDD, "S", [UserScripts, "toggleSettings"]);
-			settingsButton.transform.x = scene.width - 10 - settingsButton.transform.width;
-			settingsButton.transform.y = 10;
-			settingsButton.transform.attach();
+			lives = create(Button);
+			lives.setup(scene.width / 3 - 13  , 100, 0xDDDDDD, 0x000000, "Lives");
+			lives.transform.attach();
 			
+			coins = create(Button);
+			coins.setup(scene.width / 3 - 13 , 100, 0xDDDDDD, 0x000000, "Coins");
+			coins.transform.attach();
+			
+			level = create(Button);
+			level.setup(scene.width / 3 - 13, 100, 0xDDDDDD, 0x000000, "Level 1");
+			level.transform.attach();
 			
 			var action1:ActionWidget = create(ActionWidget);
 			var action2:ActionWidget = create(ActionWidget);
@@ -55,6 +62,18 @@ package gui.actionslist
 				action.transform.y = 100 + action.transform.height * i;
 				action.transform.attach();
 			}
+		
+			
+			link("settings", create(SettingsWidget));
+			settings.transform.visible = false;
+			
+			settingsButton.setup(50, 50, 0x333333, 0xDDDDDD, "S", [UserScripts, "toggleSettings"]);
+			settingsButton.transform.x = scene.width - 10 - settingsButton.transform.width;
+			settingsButton.transform.y = 10;
+			settingsButton.transform.attach();
+			
+			settings.transform.attach();
+
 			
 		}
 		
@@ -69,8 +88,18 @@ package gui.actionslist
 			{
 				var action:ActionWidget = actionsList[i];
 				action.transform.y = 300 + (action.transform.height + 10 )* i;
-				action.transform.attach();
+				//action.transform.attach();
 			}
+			
+			level.transform.x = 10;
+			level.transform.y = 10;
+			
+			coins.transform.x = level.transform.x + level.transform.width + 10;
+			coins.transform.y = 10;
+			
+			lives.transform.x = coins.transform.x + coins.transform.width + 10;
+			lives.transform.y = 10;
+			
 		}
 		
 		listener function toggleSettings():void
