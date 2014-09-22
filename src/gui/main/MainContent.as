@@ -42,7 +42,7 @@ package gui.main
 			
 			
 		 	mainButton = create(Button);
-			mainButton.setup(150, 75, 0xF9A651, 0x000000, "Play", [UserScripts, "goToActionList"]);
+			mainButton.setup(150, 75, 0xF9A651, 0x000000, "Play", [UserScripts, "goToLivesScreen"]);
 			mainButton.transform.x = scene.width / 2 - 50;
 			mainButton.transform.y = scene.height * 2/3;
 			

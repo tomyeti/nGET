@@ -31,7 +31,7 @@ package gui
 			
 			
 		}
-		public function setup(w:Number, h:Number, color:uint, labelColor:uint, text:String, s:* = null):void
+		public function setup(w:Number, h:Number, color:uint, labelColor:uint, text:String, s:* = null):Button
 		{
 			back.clear().drawRect(w,h,color);
 			label.setup(text);
@@ -48,7 +48,7 @@ package gui
 			label.x = back.width / 2 - label.width / 2;
 			label.y = back.height / 2 - label.height / 2;
 			
-			
+			return this;
 		}
 		
 		public function centerLabel():void
