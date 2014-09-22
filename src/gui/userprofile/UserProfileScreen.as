@@ -21,12 +21,15 @@ package gui.userprofile
 		auto var smiley:gtShapeNode;
 		
 		public var exit:Button;
+		
 
 		
 		public function onCreate():void
 		{
 			transform.attach("background");
 			backing.drawRoundedRect(scene.width - 20, scene.height / 5, 25, 0xBBBBBB).attach();
+			
+			
 			
 			xpBacking.drawRect(backing.width - 50, 50, 0xEEEEEE).attach();
 			xp.drawRect(xpBacking.width * .65, 50, 0x777777).attach();

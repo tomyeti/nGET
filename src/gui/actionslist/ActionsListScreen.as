@@ -27,6 +27,9 @@ package gui.actionslist
 		public var scrollTransform:gtTransformNode;
 		public var scroller:gtScroller;
 		
+		auto var sneakyBack:gtShapeNode;
+
+		
 		public function onCreate():void
 		{
 			transform.attach("background");
@@ -36,17 +39,7 @@ package gui.actionslist
 		{
 			background.drawRect(scene.width,scene.height,0xeeeeee).attach();
 			
-			lives = create(Button);
-			lives.setup(scene.width / 3 - 13  , 100, 0xDDDDDD, 0x000000, "Lives", [UserScripts, "goToLivesScreen"]);
-			lives.transform.attach();
 			
-			coins = create(Button);
-			coins.setup(scene.width / 3 - 13 , 100, 0xDDDDDD, 0x000000, "Coins");
-			coins.transform.attach();
-			
-			level = create(Button);
-			level.setup(scene.width / 3 - 13, 100, 0xDDDDDD, 0x000000, "Level 1", [UserScripts, "goToUserProfile"]);
-			level.transform.attach();
 			
 			link("scroller", create(gtScroller));
 			link("scrollTransform", create(gtTransformNode));
@@ -90,6 +83,22 @@ package gui.actionslist
 			scroller.setup("scrollY", scrollTransform, 50);
 			scroller.useBackground(background);
 			
+			
+			sneakyBack.drawRect(background.width, 200, 0xEEEEEE).attach();
+			
+			lives = create(Button);
+			lives.setup(scene.width / 3 - 13  , 100, 0xDDDDDD, 0x000000, "Lives", [UserScripts, "goToLivesScreen"]);
+			lives.transform.attach();
+			
+			coins = create(Button);
+			coins.setup(scene.width / 3 - 13 , 100, 0xDDDDDD, 0x000000, "Coins");
+			coins.transform.attach();
+			
+			level = create(Button);
+			level.setup(scene.width / 3 - 13, 100, 0xDDDDDD, 0x000000, "Level 1", [UserScripts, "goToUserProfile"]);
+			level.transform.attach();
+			
+			
 		}
 		
 		public function onChangeFrom():void
@@ -121,11 +130,19 @@ package gui.actionslist
 		public function get scrollY():Number { return _scrollY; }
 		public function set scrollY(v:Number):void
 		{
-			scrollTransform.y = _scrollY = v;
-			if (scrollTransform.y < 0)
+
+			var usableHeight = actionsList.length * actionsList[0].transform.height;
+			
+			if (scrollTransform.y < 200 - usableHeight)
 			{
-				scrollTransform.y = _scrollY = 0; //reletive to self
+				scrollTransform.y = 200 - usableHeight;
 			}
+			else 
+			{
+				scrollTransform.y = _scrollY = v;
+
+			}
+			
 			
 		}
 		
