@@ -37,7 +37,7 @@ package gui.actionslist
 			background.drawRect(scene.width,scene.height,0xeeeeee).attach();
 			
 			lives = create(Button);
-			lives.setup(scene.width / 3 - 13  , 100, 0xDDDDDD, 0x000000, "Lives");
+			lives.setup(scene.width / 3 - 13  , 100, 0xDDDDDD, 0x000000, "Lives", [UserScripts, "goToLivesScreen"]);
 			lives.transform.attach();
 			
 			coins = create(Button);
@@ -45,7 +45,7 @@ package gui.actionslist
 			coins.transform.attach();
 			
 			level = create(Button);
-			level.setup(scene.width / 3 - 13, 100, 0xDDDDDD, 0x000000, "Level 1");
+			level.setup(scene.width / 3 - 13, 100, 0xDDDDDD, 0x000000, "Level 1", [UserScripts, "goToUserProfile"]);
 			level.transform.attach();
 			
 			link("scroller", create(gtScroller));
