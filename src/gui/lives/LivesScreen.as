@@ -3,7 +3,9 @@ package gui.lives
 	import gametheater.gtScreen;
 	
 	import gui.Button;
+
 	import gui.UserScripts;
+
 	
 	public class LivesScreen extends gtScreen
 	{
@@ -12,8 +14,10 @@ package gui.lives
 		auto var exit:Button;
 		auto var ask:Button;
 		auto var buy:Button;
-		
+		auto var mainHeader:Button;
 		public var livesCounter:LivesCounterWidget;
+		
+		
 		
 		public function onCreate():void
 		{
@@ -39,6 +43,13 @@ package gui.lives
 			buy.centerLabel();
 			buy.transform.y = ask.transform.y - buy.transform.height - 50;
 			buy.transform.x = (scene.width - buy.transform.width) / 2;
+			
+			mainHeader.setup(scene.width / PHI,50,0x444444,0xffffff,"4 Heart").transform.attach();
+			mainHeader.label.size = 20;
+			mainHeader.centerLabel();
+			mainHeader.transform.y = 10;
+			mainHeader.transform.x = 10;
+			
 			
 			link("livesCounter", create(LivesCounterWidget));
 			livesCounter.transform.y = 100;
