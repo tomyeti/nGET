@@ -151,12 +151,7 @@ package gui.actionslist
 		}
 		public function onScrollerEnd():void
 		{
-			/*if (scrollTransform.y < -10) 
-			{
-				scrollTransform.tweenTo(1, {y: 0});
-				
-				
-			}*/
+			//called by gtScroller
 		}
 		
 		
